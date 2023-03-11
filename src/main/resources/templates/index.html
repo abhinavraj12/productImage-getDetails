@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product Catalog</title>
+</head>
+<body>
+    <table>
+        <tr th:each="product : ${products}">
+            <td><a th:href="@{/products/{productId}(productId=${product.productId})}">
+                <img th:src="${product.image}" alt="Product Image"/>
+            </a></td>
+        </tr>
+    </table>
+</body>
+</html>
